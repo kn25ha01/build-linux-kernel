@@ -1,0 +1,10 @@
+services:
+  build-linux-kernel:
+    container_name: build-linux-kernel
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./linux:/usr/local/src/linux
