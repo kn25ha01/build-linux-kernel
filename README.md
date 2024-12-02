@@ -41,18 +41,18 @@ Build the Linux kernel source and generate the [bzImage](https://ja.wikipedia.or
 # make -j8 bzImage modules 1>build.log
 ```
 
-Install the kernel modules to `/lib/modules` and the vmlinux file to `/boot/vmlinux`.
+Install the kernel modules to `/lib/modules` and the vmlinux file to `/boot/vmlinux`.　(The basic premise is that containers do not have a kernel, but use the kernel of the host OS. In fact, nothing will happen if you install it in this directory.)
 
 ```
 # make modules_install install 1>install.log
 ```
 
-~~Verify the kernel version after updating.~~
+Verify the kernel version after updating. (Since the host OS kernel has not been updated, the kernel version seen by the container does not change.)
 
-~~# exit~~
-
-~~$ docker compose restart~~
-
-~~$ docker exec -it build-linux-kernel /bin/bash~~
-
-~~# uname -r~~
+```
+# exit
+$ docker compose restart
+$ docker exec -it build-linux-kernel /bin/bash
+# uname -r
+6.8.0-45-generic
+```
