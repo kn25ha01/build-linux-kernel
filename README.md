@@ -41,7 +41,7 @@ Build the Linux kernel source and generate the [bzImage](https://ja.wikipedia.or
 # make -j8 bzImage modules 1>build.log
 ```
 
-Install the kernel modules to `/lib/modules` and the vmlinux file to `/boot/vmlinux`.　(The basic premise is that containers do not have a kernel, but use the kernel of the host OS. In fact, nothing will happen if you install it in this directory.)
+Install the kernel modules to `/lib/modules` and the vmlinuz file to `/boot/vmlinuz`.　(The basic premise is that containers do not have a kernel, but use the kernel of the host OS. In fact, nothing will happen if you install it in this directory.)
 
 ```
 # make modules_install install 1>install.log
